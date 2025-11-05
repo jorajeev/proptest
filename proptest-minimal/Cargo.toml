@@ -1,0 +1,31 @@
+[package]
+name = "proptest-minimal"
+version = "0.1.0"
+authors = ["Jason Lingle"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/proptest-rs/proptest"
+homepage = "https://proptest-rs.github.io/proptest/"
+documentation = "https://docs.rs/proptest-minimal/"
+keywords = ["property", "testing", "quickcheck"]
+categories = ["development-tools::testing"]
+edition = "2021"
+rust-version = "1.82"
+
+description = """
+Minimal core of the proptest property testing framework - essential Strategy and ValueTree traits.
+"""
+
+[features]
+default = ["std"]
+
+# Enables the use of standard-library dependent features
+std = ["rand/std", "num-traits/std"]
+
+# For use in no_std environments with access to an allocator
+alloc = []
+
+[dependencies]
+num-traits = { workspace = true }
+rand = { workspace = true, features = ["alloc"] }
+rand_xorshift = { workspace = true }
+rand_chacha = { workspace = true }

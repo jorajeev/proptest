@@ -4,6 +4,7 @@ members = [
     "proptest-derive",
     "proptest-state-machine",
     "proptest-macro",
+    "proptest-minimal",
 ]
 
 resolver = "2"
