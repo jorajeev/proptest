@@ -7,6 +7,7 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
+use rand::distributions::uniform::SampleUniform;
 use rand::{Rng, RngCore, SeedableRng};
 use rand_chacha::ChaChaRng;
 
@@ -31,6 +32,23 @@ impl TestRng {
     /// This is useful for reproducible tests.
     pub fn deterministic_rng() -> Self {
         Self::from_seed([0u8; 32])
+    }
+
+    /// Generate a random value.
+    pub fn random<T>(&mut self) -> T
+    where
+        rand::distributions::Standard: rand::distributions::Distribution<T>,
+    {
+        self.rng.random()
+    }
+
+    /// Generate a random value in the given range.
+    pub fn random_range<T, R>(&mut self, range: R) -> T
+    where
+        T: SampleUniform,
+        R: rand::distributions::uniform::SampleRange<T>,
+    {
+        self.rng.random_range(range)
     }
 }
 

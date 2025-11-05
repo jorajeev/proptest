@@ -33,9 +33,13 @@ pub mod std_facade;
 
 pub mod strategy;
 pub mod test_runner;
+pub mod arbitrary;
+pub mod num;
+pub mod bool;
 
 /// Re-export of commonly used items.
 pub mod prelude {
-    pub use crate::strategy::{NewTree, Strategy, ValueTree};
-    pub use crate::test_runner::Reason;
+    pub use crate::strategy::{Just, NewTree, Strategy, ValueTree};
+    pub use crate::test_runner::{Reason, TestRng};
+    pub use crate::arbitrary::{any, any_with, Arbitrary, StrategyFor};
 }

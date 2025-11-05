@@ -13,5 +13,7 @@
 //! form the foundation of proptest's architecture.
 
 mod traits;
+mod just;
 
 pub use self::traits::{NewTree, Strategy, ValueTree};
+pub use self::just::{Just, LazyJust, LazyJustFn};
