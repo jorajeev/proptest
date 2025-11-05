@@ -1,0 +1,15 @@
+[package]
+name = "proptest-minimal"
+version = "0.1.0"
+authors = ["Proptest Contributors"]
+license = "MIT OR Apache-2.0"
+edition = "2021"
+rust-version = "1.82"
+publish = false
+
+description = """
+Minimal examples for proptest property-based testing.
+"""
+
+[dependencies]
+proptest = { path = "../proptest" }
