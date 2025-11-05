@@ -72,6 +72,8 @@ pub mod strategy;
 pub mod test_runner;
 pub mod tuple;
 
+pub mod minimal;
+
 pub mod option;
 #[cfg(feature = "std")]
 #[cfg_attr(docsrs, doc(cfg(feature = "std")))]
